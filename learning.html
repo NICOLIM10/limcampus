@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Learning Materials</title>
+   <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0d314c;
+            color: white;
+            padding: 15px 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .logo .icon {
+            color: rgb(255, 196, 0);
+            font-size: 1.5em;
+            margin-right: 5px;
+        }
+
+        .logo .brand {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Mobile Navigation */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            background: white;
+            height: 2px;
+            width: 25px;
+            margin: 4px 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #0d314c;
+                display: none;
+                padding: 20px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            nav ul.showing {
+                display: flex;
+            }
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        section p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.2em;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #333;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        /* Practice Section */
+        .practice textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .practice button {
+            background-color: #3b88f6;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+        }
+
+        .practice button:hover {
+            background-color: #2c6fd6;
+        }
+
+        /* Sign Up and Login Button Styles */
+        .sign-up {
+            background-color: #ff477e; /* Bright pink for sign up */
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .sign-up:hover {
+            background-color: #d93c6b; /* Darker pink for hover */
+        }
+
+        .login {
+            background-color: #3b88f6; /* Bright blue for login */
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .login:hover {
+            background-color: #2c6fd6; /* Darker blue for hover */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0d314c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .practice textarea {
+                height: 150px;
+            }
+
+            .practice button {
+                font-size: 1.1em;
+                width: 100%;
+            }
+
+            header {
+                padding: 10px 15px;
+            }
+
+            .logo {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo .icon, .logo .brand {
+                font-size: 1.2em;
+            }
+
+            nav ul {
+                padding: 10px;
+                background-color: #0d314c;
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+                cursor: pointer;
+            }
+
+            nav ul.showing {
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav ul li a {
+                padding: 10px;
+                font-size: 1.2em;
+            }
+        } 
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Logo" class="logo-img">
+        <span class="icon">Lim</span>
+        <span class="brand">Campus</span>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html" id="profile-link">home</a></li>
+            <li><a href="index.html" id="settings-link">logout</a></li>
+        </ul>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section id="introduction">
+        <h2>Introduction to HTML</h2>
+        <p>HTML (HyperText Markup Language) is the standard language for creating web pages. It uses tags to structure content.</p>
+    </section>
+
+    <section id="basic-tags">
+        <h2>Basic HTML Tags</h2>
+        <p>Here are some fundamental HTML tags:</p>
+        <pre>
+&lt;h1&gt;Heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;a href="https://example.com"&gt;This is a link&lt;/a&gt;
+&lt;img src="image.jpg" alt="Image description"&gt;
+        </pre>
+    </section>
+
+    <section id="forms">
+        <h2>HTML Forms</h2>
+        <p>Forms allow users to input data:</p>
+        <pre>
+&lt;form&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;br&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+        </pre>
+    </section>
+
+    <section id="practice" class="practice">
+        <h2>Practice</h2>
+        <p>Try writing your own HTML in the editor below:</p>
+        <textarea id="editor"></textarea>
+        <button onclick="runCode()">Run</button>
+        <iframe id="output"></iframe>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 HTML Learning Platform</p>
+</footer>
+
+<script>
+    function runCode() {
+        let code = document.getElementById("editor").value;
+        let iframe = document.getElementById("output").contentWindow.document;
+        iframe.open();
+        iframe.write(code);
+        iframe.close();
+    }
+</script>
+
+</body>
+</html>
