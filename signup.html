@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - EduBlogs</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #0d314c;
+            color: white;
+            padding: 15px 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .brand {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Mobile Navigation */
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            background: white;
+            height: 3px;
+            width: 25px;
+            margin: 4px 0;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #0d314c;
+                display: none;
+                padding: 20px;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            nav ul.showing {
+                display: flex;
+            }
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .sign-up, .login {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .sign-up {
+            background-color: #ff477e;
+        }
+
+        .login {
+            background-color: #3b88f6;
+        }
+
+        .sign-up:hover {
+            background-color: #d93c6b;
+        }
+
+        .login:hover {
+            background-color: #2c6fd6;
+        }
+
+        /* Sign Up Container */
+        .signup-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            padding: 20px;
+        }
+
+        .signup-box {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .signup-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #0d314c;
+        }
+
+        .signup-box .form-label {
+            font-weight: bold;
+        }
+
+        .signup-box button {
+            background-color: #3b88f6;
+            border: none;
+        }
+
+        .signup-box button:hover {
+            background-color: #2c6fd6;
+        }
+
+        .signup-box p a {
+            color: #ff477e;
+            text-decoration: none;
+        }
+
+        .signup-box p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0d314c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .buttons {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .sign-up, .login {
+                width: 100%;
+            }
+
+            header {
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Logo" class="logo-img">
+        <span class="brand">Campus</span>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="learning.html">Learn HTML</a></li>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+        </ul>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    <div class="buttons">
+        <a href="signup.html"><button class="sign-up">SIGN UP</button></a>
+        <a href="login.html"><button class="login">LOGIN</button></a>
+    </div>
+</header>
+
+<div class="signup-container">
+    <div class="signup-box">
+        <h2><i class="bi bi-person-plus-fill"></i> Sign Up</h2>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label"><i class="bi bi-person-fill"></i> Full Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label"><i class="bi bi-envelope-fill"></i> Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label"><i class="bi bi-lock-fill"></i> Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+            </div>
+            <div class="mb-3">
+                <label for="confirm-password" class="form-label"><i class="bi bi-lock-fill"></i> Confirm Password</label>
+                <input type="password" class="form-control" id="confirm-password" placeholder="Confirm your password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100"><i class="bi bi-person-check-fill"></i> Sign Up</button>
+        </form>
+        <p class="text-center mt-3">Already have an account? <a href="login.html">Login</a></p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 HTML Learning Platform</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
